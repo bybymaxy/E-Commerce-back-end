@@ -17,9 +17,7 @@ const sequelize = new Sequelize(
 );
 
 // Models
-const Category = require('./models/Category')(sequelize);
-const Product = require('./models/Product')(sequelize);
-const Tag = require('./models/Tag')(sequelize);
+const { Category, Product, Tag } = require('./models');
 
 // Routes
 const categoryRoutes = require('./routes/categoryRoutes');
@@ -32,9 +30,8 @@ app.use('/api/categories', categoryRoutes);
 app.use('/api/products', productRoutes);
 app.use('/api/tags', tagRoutes);
 
-// Sync Database and Start Server
 sequelize.sync({ force: true }).then(() => {
-    app.listen(PORT, () => {
-      console.log(`Server is running on http://localhost:${PORT}`);
-    });
+  app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
   });
+});
