@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Category = require('../models/Category');
+const { Category } = require('../models');
 
 // GET all categories
 router.get('/', (req, res) => {
@@ -17,7 +17,6 @@ router.get('/', (req, res) => {
 // GET a specific category by ID
 router.get('/:id', (req, res) => {
   const categoryId = req.params.id;
-
   Category.findByPk(categoryId)
     .then((category) => {
       if (category) {
@@ -35,7 +34,6 @@ router.get('/:id', (req, res) => {
 // POST a new category
 router.post('/', (req, res) => {
   const { name } = req.body;
-
   Category.create({ name })
     .then((category) => {
       res.status(201).json(category);
@@ -50,7 +48,6 @@ router.post('/', (req, res) => {
 router.put('/:id', (req, res) => {
   const categoryId = req.params.id;
   const { name } = req.body;
-
   Category.update({ name }, { where: { id: categoryId } })
     .then((result) => {
       if (result[0] === 1) {
@@ -68,7 +65,6 @@ router.put('/:id', (req, res) => {
 // DELETE a category by ID
 router.delete('/:id', (req, res) => {
   const categoryId = req.params.id;
-
   Category.destroy({ where: { id: categoryId } })
     .then((result) => {
       if (result === 1) {
