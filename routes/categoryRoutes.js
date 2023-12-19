@@ -1,19 +1,15 @@
-// categoryRoutes.js
-module.exports = (express, Category) => {
-    const router = express.Router();
-  
-    // Get all categories
-    router.get('/', async (req, res) => {
-      try {
-        const categories = await Category.findAll();
-        res.json(categories);
-      } catch (error) {
-        console.error(error);
-        res.status(500).json({ error: 'Internal Server Error' });
-      }
-    });
-  
-    // Other CRUD operations can be added here
-  
-    return router;
-  };
+const express = require('express');
+const router = express.Router();
+const Category = require('../models/Category');
+
+router.get('/', (req, res) => {
+  // Handle GET request for categories
+});
+
+router.post('/', (req, res) => {
+  // Handle POST request for creating a new category
+});
+
+// Add more routes as needed
+
+module.exports = router;
