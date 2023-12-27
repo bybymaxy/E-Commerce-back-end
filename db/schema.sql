@@ -1,16 +1,15 @@
--- Drop tables if they exist
-DROP TABLE IF EXISTS categories;
-DROP TABLE IF EXISTS products;
-DROP TABLE IF EXISTS tags;
-DROP TABLE IF EXISTS product_tags;
+DROP DATABSE IF EXISTS employee_DB;
+CREATE database employee_DB;
 
--- Create categories table
+USE employee_DB;
+
+
 CREATE TABLE categories (
   id INT AUTO_INCREMENT PRIMARY KEY,
   category_name VARCHAR(50) NOT NULL
 );
 
--- Create products table
+
 CREATE TABLE products (
   id INT AUTO_INCREMENT PRIMARY KEY,
   product_name VARCHAR(50) NOT NULL,
@@ -20,13 +19,13 @@ CREATE TABLE products (
   FOREIGN KEY (category_id) REFERENCES categories (id) ON DELETE CASCADE
 );
 
--- Create tags table
+
 CREATE TABLE tags (
   id INT AUTO_INCREMENT PRIMARY KEY,
   tag_name VARCHAR(50) NOT NULL
 );
 
--- Create product_tags table
+
 CREATE TABLE product_tags (
   id INT AUTO_INCREMENT PRIMARY KEY,
   product_id INT,
