@@ -1,7 +1,7 @@
-DROP DATABSE IF EXISTS employee_DB;
-CREATE database employee_DB;
+DROP DATABSE IF EXISTS e_commerce_db;
+CREATE database e_commerce_db;
 
-USE employee_DB;
+USE e_commerce_db;
 
 
 CREATE TABLE categories (

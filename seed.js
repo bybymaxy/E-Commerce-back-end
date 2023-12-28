@@ -1,9 +1,12 @@
 const Category = require('./models/Category');
 const Product = require('./models/Product');
 const Tag = require('./models/Tag');
+const sequelize = require('./database');
 
 (async () => {
   try {
+    await sequelize.sync({ force: true });
+
     await Category.bulkCreate([
       { name: 'Category 1' },
       { name: 'Category 2' },
@@ -25,5 +28,7 @@ const Tag = require('./models/Tag');
     console.log('Database seeded successfully');
   } catch (error) {
     console.error('Error seeding the database:', error);
+  } finally {
+    await sequelize.close();
   }
 })();
