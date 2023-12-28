@@ -1,7 +1,7 @@
 const Category = require('./models/Category');
 const Product = require('./models/Product');
 const Tag = require('./models/Tag');
-const sequelize = require('./index').sequelize;
+const sequelize = require('./index'); 
 
 (async () => {
   try {
@@ -28,7 +28,5 @@ const sequelize = require('./index').sequelize;
     console.log('Database seeded successfully');
   } catch (error) {
     console.error('Error seeding the database:', error);
-  } finally {
-    await sequelize.close();
   }
 })();

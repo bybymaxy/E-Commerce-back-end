@@ -1,13 +1,10 @@
 const express = require('express');
-const sequelize = require('./database');
 const categoryRoutes = require('./routes/categoryRoutes');
 const productRoutes = require('./routes/productRoutes');
 const tagRoutes = require('./routes/tagRoutes');
-
 const app = express();
 const PORT = process.env.PORT || 3000;
-
-const { Sequelize, DataTypes } = require('sequelize');
+const { Sequelize } = require('sequelize');
 const dotenv = require('dotenv');
 dotenv.config();
 
@@ -21,6 +18,7 @@ const sequelize = new Sequelize(
   }
 );
 
+// Export the sequelize instance
 module.exports = sequelize;
 
 // Use the routes
