@@ -1,7 +1,7 @@
 const Category = require('./models/Category');
 const Product = require('./models/Product');
 const Tag = require('./models/Tag');
-const sequelize = require('./database');
+const sequelize = require('./index').sequelize;
 
 (async () => {
   try {
