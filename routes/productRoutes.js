@@ -12,9 +12,9 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.post('/', async (req, res) => {
+router.post('/products', async (req, res) => {
   try {
-    const { product_name, /* other attributes */ } = req.body;
+    const { product_name, price, category_id } = req.body;
 
     // Validate that product_name is provided
     if (!product_name) {
@@ -27,10 +27,9 @@ router.post('/', async (req, res) => {
       /* other attributes */
     });
 
-    res.status(201).json(newProduct); // Return the newly created product in the response
+    res.status(200).json({ message: 'Product created successfully' });
   } catch (error) {
-    console.error('Error creating product:', error);
-    res.status(500).json({ error: 'Internal server error' });
+    res.status(500).json({ error: 'Failed to create product' });
   }
 });
 
