@@ -14,8 +14,19 @@ router.get('/', async (req, res) => {
 
 router.post('/', async (req, res) => {
   try {
-    const productData = req.body; // Get the product data from the request body
-    const newProduct = await Product.create(productData); // Create a new product using the Product model
+    const { product_name, /* other attributes */ } = req.body;
+
+    // Validate that product_name is provided
+    if (!product_name) {
+      return res.status(400).json({ error: 'Product name is required' });
+    }
+
+    // Create the product
+    const newProduct = await Product.create({
+      product_name,
+      /* other attributes */
+    });
+
     res.status(201).json(newProduct); // Return the newly created product in the response
   } catch (error) {
     console.error('Error creating product:', error);

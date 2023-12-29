@@ -12,9 +12,9 @@ Product.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    Product_name: {
+    product_name: {
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: false,
     },
   },
   {
@@ -22,7 +22,7 @@ Product.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'Product', // Set the model name
+    modelName: 'product', // Set the model name
     tableName: 'products', // Set the table name
   }
 );
