@@ -1,15 +1,18 @@
-const sequelize = require('../config/connection');
-const { DataTypes } = require('sequelize');
+const { DataTypes, Model } = require('sequelize');
+class Product extends Model {}
 
-
-const Product = (sequelize) => {
-  const model = sequelize.define('Product', {
-    // define the model attributes here
-  });
-
-  // define the model associations here
-
-  return model;
-};
-
-module.exports = Product;
+Product.init(
+  {
+    // define other attributes here
+    createdAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
+    // define other attributes here
+  },
+  {
+    sequelize,
+    modelName: 'Product',
+  }
+);
