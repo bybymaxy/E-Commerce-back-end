@@ -1,18 +1,24 @@
-const { DataTypes, Model } = require('sequelize');
-class Product extends Model {}
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection');
 
-Product.init(
+class Tag extends Model {}
+
+Tag.init(
   {
-    // define other attributes here
-    createdAt: {
-      type: DataTypes.DATE,
+    // define attributes here
+    tag_name: {
+      type: DataTypes.STRING,
       allowNull: false,
-      defaultValue: DataTypes.NOW,
     },
     // define other attributes here
   },
   {
     sequelize,
-    modelName: 'Product',
+    modelName: 'Tag',
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
   }
 );
+
+module.exports = product;
