@@ -47,12 +47,12 @@ ${tests}
 n/a
 
 ## Questions
-- [bybymaxy](https://github.com/bybymaxy/Note-Taker)
+- [bybymaxy](https://github.com/bybymaxy/E-Commerce-back-end)
 - [send-email-to](mailto:bybymaxy@gmail.com)
-- [Live website link](https://bybymaxy.github.io/Note-Taker/)
+- [Live website link](https://drive.google.com/file/d/1klObpTCi3tuHzCALmD9s79bEk64LDk5f/view)
 
 ## Screenshots
 ${screenshots}
-![screenshot1](./Note-Taker/Develop/public/assets/screenshots/Screenshot1.png)
-![screenshot2](./Note-Taker/Develop/public/assets/screenshots/Screenshot2.png)
-![screenshot3](./Note-Taker/Develop/public/assets/screenshots/Screenshot3.png)
+![screenshot1](./assets/Screenshot1%20(2).png)
+![screenshot2](./assets/Screenshot2%20(2).png)
+![screenshot3](./assets/Screenshot3%20(2).png)
