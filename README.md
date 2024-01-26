@@ -53,6 +53,7 @@ n/a
 
 ## Screenshots
 ${screenshots}
-![screenshot1](./assets/Screenshot1%20(2).png)
-![screenshot2](./assets/Screenshot2%20(2).png)
-![screenshot3](./assets/Screenshot3%20(2).png)
+![screenshot1](./assets/screenshot%201.png)
+![screenshot2](./assets/screenshot%202.png)
+![screenshot3](./assets/Screenshot1%203.png)
+![screenshot4](./assets/screenshot%204.png)

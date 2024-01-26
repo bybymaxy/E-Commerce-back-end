@@ -1,9 +1,0 @@
-{
-    "development": {
-      "username": "root",
-      "password": "Halloween1!",
-      "database": "Ecommerce",
-      "host": "localhost",
-      "dialect": "mysql"
-    }
-  }

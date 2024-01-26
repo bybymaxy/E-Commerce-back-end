@@ -1,11 +1,11 @@
 const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+
+const sequelize = require('../config/connection.js');
 
 class Category extends Model {}
 
 Category.init(
   {
-    // Define your model attributes here
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -22,8 +22,7 @@ Category.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'Category', // Set the model name
-    tableName: 'categories', // Set the table name
+    modelName: 'category',
   }
 );
 
